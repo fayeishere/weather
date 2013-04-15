@@ -1,0 +1,16 @@
+
+#container {
+    height:150px;
+    width:150px;
+    background-color:#FF0000;
+    border-radius:5px;
+}
+#temp {
+}
+#reaction {
+    height:100px;
+    width:100px;
+    background-color:#0000FF;
+    border-radius:5px;
+    color: #FFFFFF;
+}

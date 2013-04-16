@@ -1,0 +1,4 @@
+Weather App (In progress) For Two Wheels:
+
+A simple ruby/sinatra app using wunderground API - designed to help the
+driver on two wheels decide if it's worth taking the trip.

@@ -1,16 +1,25 @@
-
+/*
 #container {
-    height:150px;
-    width:150px;
-    background-color:#FF0000;
-    border-radius:5px;
+  position: absolute;
+  height:100px;
+  width:150px;
+  background-color:#FF0000;
+  border-radius:5px;
+}*/
+#box {
+  /*float: left;*/
+/*  height:150px;
+  width:150px;
+  background-color:#FF0000;
+  border-radius:5px;*/
 }
-#temp {
+img {
+  float: right;
+  height:200px;
+  width:200px;
 }
-#reaction {
-    height:100px;
-    width:100px;
-    background-color:#0000FF;
-    border-radius:5px;
-    color: #FFFFFF;
+h2 {
+  border-radius: 2px;
+  border-color: #000000;
+  border-width: 3px;
 }

@@ -8,6 +8,7 @@
     <title>sinSimple</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     <script type="text/javascript" src="/javascript/sinSimple.js"></script>
     <!-- Le styles -->
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -44,7 +45,7 @@
           </button>
           <a class="brand" href="#">Weather For Two Wheels</a>
           <div class="nav-collapse collapse">
-            <ul class="nav">
+    <!--         <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -65,7 +66,7 @@
               <input class="span2" type="text" placeholder="Email">
               <input class="span2" type="password" placeholder="Password">
               <button type="submit" class="btn">Sign in</button>
-            </form>
+            </form> -->
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -73,26 +74,32 @@
 
     <div class="container">
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit row span10">
-        <h1 id ="box">Weather Or Not?</h1>
-        <img class= "btn btn-primary btn-large" src="/images/motorcycle-icon-md.png"></img>
+      <div class="hero-unit clearfix">
+        <img class= "moto btn btn-primary btn-large" src="/images/motorcycle-icon-md.png"></img>
+        <h1 id="box">Weather Or Not?</h1>
+
         <!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
       </div>
-
+      <div id="rain"></div>
       <!-- Example row of columns -->
       <div class="row">
-        <div class="span4 border">
-          <h2 class="weather day0"></h2>
-
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+        <div class="span4">
+          <div class="alpha">
+            <h2 class="day0"></h2>
+            <p><a class="btn detail" href="#">View details &raquo;</a></p>
+          </div>
         </div>
         <div class="span4">
-          <h2 class="weather day1"></h2>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <div class="beta">
+            <h2 class="day1"></h2>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+          </div>
        </div>
         <div class="span4">
-          <h2 class="weather day2"></h2>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <div class="alpha">
+            <h2 class="day2"></h2>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+          </div>
         </div>
       </div>
 
@@ -103,8 +110,33 @@
       </footer>
 
     </div> <!-- /container -->
+<!-- trying to make rain -->
+  <script type="text/javascript">
+    function createdrop(){
+    var placement = Math.floor(Math.random()*($("#rain").width() -50)); // randomly selects a place for the drop
+    var fallHeight = $("#rain").height() - 70;  // calculates the fall distance
 
+    // creates the img tag for the drop
+    // the random "placement" variable is also used to create a unique ID for the drop
+    $('.row').append('<img src="images/drop.png" width="50" height="50" id="drop'+placement+'" class="drop"/>')
+        //////////  animate the movement of the drop
+        $("#drop"+placement).css({top:"-50px", left:placement+"px"});
+        $("#drop"+placement).animate({top:"-40px", height:"90px", opacity: ".2"}, 1000);
+        $("#drop"+placement).animate({top:"-10px", height:"50px",  opacity: ".8"}, 200);
+        $("#drop"+placement).animate({top:fallHeight+"px", opacity: ".0"}, 1000, function(){
+        $("#drop"+placement).remove();  //removes drop after animation is complete
+        });
+        //////////  end animate the movement of the drop
+  }
+
+   // setInterval(createdrop, 1000);  // sets the rate the drops will appear. Smaller number = more drops.
+
+    $( document ).click(function() {
+      $('.moto').effect( "bounce", "slow" );
+    });
+  </script>
     <!-- Le javascript
+
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/bootstrap/js/bootstrap.js"></script>

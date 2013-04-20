@@ -37,10 +37,10 @@ $(document).ready(function() {
             $(".day" + i).append("<p>It's too cold to ride today! The low is " + low + " degrees!</p>");
           }
           if (rain>0.006) {
-            $(".day" + i).append("<p>It's wet out there. Wear some waterproof stuff!</p>");
+            $(".day" + i).append("<p>It's wet out there. Wear something waterproof!</p>");
           }
           if (wind<5 && low>37 && rain<0.006) {
-            $(".day" + i).append("<p>Ride On!</p>");
+            $(".day" + i).append("<p>Ride On!It's A Great Day To Ride!</p>");
             console.log("Go!");
           }
           // Why doesn't this work?

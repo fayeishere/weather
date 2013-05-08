@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>sinSimple</title>
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <title>Weather For Two Wheels</title>
+    <!-- JS -->
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     <script type="text/javascript" src="/javascript/sinSimple.js"></script>
     <!-- Le styles -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
@@ -81,8 +82,9 @@
         <!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
       </div>
       <div id="rain"></div>
-      <!-- Example row of columns -->
+      <!-- Begin columns -->
       <div class="row">
+        <!-- JS pull in wunderground API for each day -->
         <div class="span4">
           <div class="alpha">
             <h2 class="day0"></h2>
@@ -131,7 +133,7 @@
 
    // setInterval(createdrop, 1000);  // sets the rate the drops will appear. Smaller number = more drops.
 
-    $(".moto").click(function() {
+    $("#target").click(function() {
       $('.moto').effect( "bounce", "slow" );
     });
   </script>
